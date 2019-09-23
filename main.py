@@ -49,7 +49,7 @@ class game:
                     self.board [dice [i]] [1] += 1
                     self.middle [player] -= 1
                     self.inMiddle(other_player)
-                    del(dicce[i])
+                    del(dice[i])
                     i -= 1
             i += 1
         if len(dice) > 0 :
@@ -79,12 +79,12 @@ class game:
     def turn(self, player, other_player):
         self.roll( )
         print("dice 1 : ", self.dice [0], "\n dice 2 : ", self.dice [1])
-        if len(dice) == 4:
+        if len(self.dice) == 4:
             print("dice 3 : ", self.dice [2], "\n dice 4 : ", self.dice [3])
         if self.middle [player - 1] != 0:
-            self.outMiddle(dice, player)
+            self.outMiddle(self.dice, player)
         else:
-            self.useRoll(dice, player, other_player)
+            self.useRoll(self.dice, player, other_player)
 
 
 game = game( )
